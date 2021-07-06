@@ -1,21 +1,28 @@
 #include <iostream>
-//Dados dos valores enteros A y B, informar la suma, la resta, el producto y la división.
+/* Dada una terna de números naturales que representan al día, al mes y al año de una
+determinada fecha informarla como un solo número natural de 8 dígitos con la forma
+(AAAAMMDD).*/
 
 using namespace std;
 main()
 {
-	int A;
-	int B;
-	cout << "Introducir un numero entero" << endl;
-	cin >> A;
-	cout << "Introducir un segundo numero entero" << endl;
-	cin >> B;
-	int suma = A + B;
-	int resta = A - B;
-	int producto = A * B;
-	int division = A / B;
-	cout << "La suma de los numeros es: " << suma << endl;
-	cout << "La resta de los numeros es: " << resta << endl;
-	cout << "El producto de los numeros es: " << producto << endl;
-	cout << "La  division de los numeros es: " << division << endl;
+
+	string dia;
+	string mes;
+	string ano;
+	string anofinal = " ";
+
+	cout << "Introducir un numero natural (anio)" << endl;
+	cin >> ano;
+	anofinal += ano;
+	cout << "Introducir un segundo numero natural (mes)" << endl;
+	cin >> mes;
+	anofinal += mes;
+	cout << "Introducir un tercer numero natural (dia)" << endl;
+	cin >> dia;
+	anofinal += dia;
+
+	
+	cout << "La fecha introducida es: " << anofinal << endl;
+
 }
