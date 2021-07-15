@@ -1,5 +1,6 @@
-/* Dados N valores, informar el mayor, el menor y en qué posición del conjunto fueron
-ingresados.
+/* 29 Dado un conjunto de Nombres y Fechas de nacimientos (AAAAMMDD), que
+finaliza con un Nombre = ‘FIN’, informar el nombre de la persona con mayor edad y el de la
+más joven
 */
 
 #include <iostream>
@@ -7,26 +8,37 @@ using namespace std;
 
 main()
 {
-	string sino = "S";
-	float valor;
-	float valorMayor = 0;
-	float valorMenor = 99999999;
-	float posicionMayor = 0;
-	float posicionMenor = 0;
-	int contadorCiclos = 0;
-	while (sino == "S")
+	string nombre = "";
+	int fechaN = 0;
+	int fechaMayor = 0;
+	int fechaMenor = 30000000;
+	string nombreMayor = "";
+	string nombreMenor = "";
+
+	while (nombre != "FIN")
 	{
-		cout << "Ingrese un valor: " << endl;
-		cin >> valor;
+		cout << "Ingrese el nombre: ";
+		cin >> nombre;
 
-		valor > valorMayor ? valorMayor = valor, posicionMayor = contadorCiclos : valor;
-		valor < valorMenor ? valorMenor = valor, posicionMenor = contadorCiclos : valor;
-		contadorCiclos++;
+		if (nombre != "FIN")
+		{
+			cout << "Ingrese la fecha de nacimiento en formato AAAAMMDD: ";
+			cin >> fechaN;
 
-		cout << "Desea seguir cargando valores? S/N ";
-		cin >> sino;
+			if (fechaN < fechaMenor)
+			{
+				fechaMenor = fechaN;
+				nombreMayor = nombre;
+			}
+
+			if (fechaN > fechaMayor)
+			{
+				fechaMayor = fechaN;
+				nombreMenor = nombre;
+			}
+		}
 	}
 
-	cout << "El mayor es: " << valorMayor << " y fue ingresado en la posicion: " << posicionMayor << endl;
-	cout << "El menor es: " << valorMenor << " y fue ingresado en la posicion: " << posicionMenor << endl;
+	cout << "La persona con mayor edad es: " << nombreMayor << endl;
+	cout << "La persona con menor edad es: " << nombreMenor << endl;
 }
