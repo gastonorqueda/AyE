@@ -5,15 +5,20 @@ using namespace std;
 
 main()
 {
+	int busquedaSecuencial(int[8], int);
 	int Vec[] = {0, 2, 1, 3, 5, 6, 4, 8};
-	int i, dato;
+	int dato = 5; // Modifique para realizar la busqueda
+	busquedaSecuencial(Vec, dato);
+}
+
+busquedaSecuencial(int Vec[8], int dato)
+{
+	int i;
 	bool bandera = false;
 
 	//Busqueda
 
 	i = 0;
-
-	dato = 5;   // Modifique para realizar la busqueda
 
 	while ((bandera == false))
 	{
@@ -31,6 +36,6 @@ main()
 	}
 	else
 	{
-		cout << "El numero " << dato << " a sido encontrado en la posicion " << i - 1  << endl;
+		cout << "El numero " << dato << " a sido encontrado en la posicion " << i - 1 << endl;
 	}
 }
