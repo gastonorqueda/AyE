@@ -6,16 +6,37 @@
 using namespace std;
 
 int tamano;
+int elemento;
 main()
 {
 	cout << "Ingrese un numero entero menor que 30" << endl;
 	cin >> tamano;
 	int vec[tamano];
-	for (int i = 0; i < tamano; i++)
+	for (int pos = 0; pos < tamano; pos++)
 	{
-		if (i % 2 == 0)
+		cout << "Ingrese un elemento" << endl;
+		cin >> elemento;
+		vec[pos] = elemento;
+	}
+
+	if (vec[tamano - 1] < 10)
+	{
+		for (int pos = 0; pos < tamano; pos++)
 		{
-			vec[posicion] = i;
-			posicion++;
+			if (vec[pos] < 0)
+			{
+				cout << "El numero es: " << vec[pos] << endl;
+			}
 		}
 	}
+	else
+	{
+		for (int pos = 0; pos < tamano; pos++)
+		{
+			if (vec[pos] > 0)
+			{
+				cout << "El numero es: " << vec[pos] << endl;
+			}
+		}
+	}
+}
