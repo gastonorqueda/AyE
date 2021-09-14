@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	int N, Ca, i, j, p, k, No;
+	int N, Ca, i = 0, j, p, k, No;
 	cout << "Ingrese cantidad de cursos a registrar" << endl;
 	cin >> N;
 	int VecA[N];
